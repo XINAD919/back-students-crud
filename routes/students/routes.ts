@@ -14,27 +14,27 @@ const genericCallback = (res) => (err, data) => {
 };
 
 // CREAR ESTUDIANTE
-studentRoutes.route("/new-student").post(async (req, res, next) => {
+studentRoutes.route("/new-student").post((req, res, next) => {
   studentModel.create(req.body, genericCallback(res));
 });
 
 // OBTENER TODOS LOS ESTUDIANTES
-studentRoutes.route("/").get(async (req, res) => {
+studentRoutes.route("/").get((req, res) => {
   studentModel.find(genericCallback(res));
 });
 
 // OBTENER UN ESTUDIANTE POR ID
-studentRoutes.route("/student/:id/edit").get(async (req, res) => {
+studentRoutes.route("/student/:id/edit").get((req, res) => {
   studentModel.findById(req.params.id, genericCallback(res));
 });
 
 // ACTUALIZAR ESTUDIANTE
-studentRoutes.route("/student/:id/update").patch(async (req, res, next) => {
+studentRoutes.route("/student/:id/update").patch((req, res, next) => {
   studentModel.findByIdAndUpdate(req.params.id, req.body, genericCallback(res));
 });
 
 // ELIMINAR ESTUDIANTE
-studentRoutes.route("/student/:id/delete").delete(async (req, res, next) => {
+studentRoutes.route("/student/:id/delete").delete((req, res, next) => {
   studentModel.findByIdAndDelete(req.params.id, genericCallback(res));
 });
 
