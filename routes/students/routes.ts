@@ -24,18 +24,18 @@ studentRoutes.route("/").get((req, res) => {
 });
 
 // OBTENER UN ESTUDIANTE POR ID
-studentRoutes.route("/student/:id/edit").get((req, res) => {
-  studentModel.findById(req.params.id, genericCallback(res));
+studentRoutes.route("/student/:_id/edit").get((req, res) => {
+  studentModel.findById(req.params._id, genericCallback(res));
 });
 
 // ACTUALIZAR ESTUDIANTE
-studentRoutes.route("/student/:id/update").patch((req, res, next) => {
-  studentModel.findByIdAndUpdate(req.params.id, req.body, genericCallback(res));
+studentRoutes.route("/student/:_id/update").patch((req, res, next) => {
+  studentModel.findByIdAndUpdate(req.params._id, req.body,{new:true}, genericCallback(res));
 });
 
 // ELIMINAR ESTUDIANTE
-studentRoutes.route("/student/:id/delete").delete((req, res, next) => {
-  studentModel.findByIdAndDelete(req.params.id, genericCallback(res));
+studentRoutes.route("/student/:_id/delete").delete((req, res, next) => {
+  studentModel.findByIdAndDelete(req.params._id, genericCallback(res));
 });
 
 export default studentRoutes;
