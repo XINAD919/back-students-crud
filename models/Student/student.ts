@@ -3,7 +3,7 @@ interface Student {
   nombre: string;
   identificacion: string;
   correo: string;
-  tel: number;
+  tel: string;
 }
 
 const studentSchema = new Schema<Student>({
@@ -14,7 +14,7 @@ const studentSchema = new Schema<Student>({
   identificacion: {
     type: String,
     required: true,
-    unique:true,
+    unique: true,
   },
   correo: {
     type: String,
@@ -30,11 +30,11 @@ const studentSchema = new Schema<Student>({
     },
   },
   tel: {
-    type: Number,
+    type: String,
     required: true,
     unique: true,
   },
 });
-const studentModel=model("student",studentSchema);
+const studentModel = model("student", studentSchema);
 
-export {studentModel};
+export { studentModel };
