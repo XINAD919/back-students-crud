@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
 interface Student {
   nombre: string;
-  identificacion: string;
+  identificacion: number;
   correo: string;
   tel: string;
 }
@@ -9,16 +9,13 @@ interface Student {
 const studentSchema = new Schema<Student>({
   nombre: {
     type: String,
-    required: true,
   },
   identificacion: {
-    type: String,
-    required: true,
+    type: Number,
     unique: true,
   },
   correo: {
     type: String,
-    required: true,
     unique: true,
     validate: {
       validator: (value: string) => {
@@ -31,7 +28,6 @@ const studentSchema = new Schema<Student>({
   },
   tel: {
     type: String,
-    required: true,
     unique: true,
   },
 });
