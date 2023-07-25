@@ -1,4 +1,4 @@
-# Backend CRUD de Personas/Estudiantes
+# Back-Students-CRUD
 
 Este es un backend desarrollado en Express con TypeScript y Mongoose para realizar un CRUD completo de personas o estudiantes en una base de datos MongoDB en la nube.
 
@@ -27,7 +27,8 @@ Este es un backend desarrollado en Express con TypeScript y Mongoose para realiz
 ## Rutas y modelos
 
 Las rutas y modelos están organizados de la siguiente manera:
-/models/Student
+  
+  /models/Student
 - student.ts
 
 /routes/students
